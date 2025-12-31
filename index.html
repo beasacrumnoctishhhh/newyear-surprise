@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scan to Unlock 🎆</title>
+<style>
+body{
+  background:black;
+  color:#00ffcc;
+  font-family:Arial;
+  text-align:center;
+}
+.scanner{
+  width:300px;
+  height:300px;
+  border:2px solid #00ffcc;
+  margin:50px auto;
+  position:relative;
+}
+.line{
+  width:100%;
+  height:4px;
+  background:#00ffcc;
+  position:absolute;
+  animation:scan 2s infinite;
+}
+@keyframes scan{
+  0%{top:0;}
+  100%{top:296px;}
+}
+#unlock{
+  display:none;
+}
+button{
+  background:#00ffcc;
+  border:none;
+  padding:10px 20px;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔒 Identity Scan Required</h1>
+<div class="scanner">
+  <div class="line"></div>
+</div>
+
+<p>Scanning... Please wait</p>
+
+<button onclick="unlock()">Unlock Surprise</button>
+
+<div id="unlock">
+  <h1>🎉 Happy New Year 🎉</h1>
+  <p>This is your surprise gift ❤️</p>
+</div>
+
+<script>
+setTimeout(()=>{
+  document.querySelector("button").style.display="inline";
+},3000);
+
+function unlock(){
+  document.getElementById("unlock").style.display="block";
+}
+</script>
+
+</body>
+</html>
